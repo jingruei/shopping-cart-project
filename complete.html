@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KID KING 童裝 | COMPLETE</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <div class="header" id="header">
+            <div class="container d-flex align-items-center justify-content-sm-between justify-content-around flex-column flex-sm-row">
+                <div><img src="images/logo.svg" alt="" /></div>
+                <div class="menu">
+                    <div><a href="index.html">首頁</a></div>
+                    <div><a href="product.html">商品</a></div>
+                    <div><a href="cart.html">購物車</a></div>
+                    <div v-show="!member.account"><a href="login.html">登入</a></div>
+                    <div v-show="member.account"><a href="#" @click.prevent="doLogout">Hi, {{ member.name }} 登出</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="banner-5"></div>
+        <div class="wrap container mt-5" id="complete-app">
+            <div class="table-responsive">
+                <table class="table table-borderless cart-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>商品</th>
+                            <th>單價</th>
+                            <th>數量</th>
+                            <th>小計</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, id) in items">
+                            <td>
+                                <img src="images/product.png" alt="" class="img-fluid" />
+                            </td>
+                            <td>
+                                <h3 class="h3">{{ item.type }}</h3>
+                                <div>
+                                    <strong>{{ item.name }}</strong>
+                                </div>
+                                <div>
+                                    <span class="cube">110</span>
+                                </div>
+                            </td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.qty }}</td>
+                            <td>{{ +item.price * +item.qty }}</td>
+                        </tr>
+                        <tr class="subtotal">
+                            <td colspan="3" class="text-right"><strong>商品金額</strong></td>
+                            <td colspan="2">{{ subtotal }}</td>
+                        </tr>
+                        <tr class="subtotal">
+                            <td colspan="3" class="text-right"><strong>運費金額</strong></td>
+                            <td colspan="2">{{ shipping }}</td>
+                        </tr>
+                        <tr class="subtotal">
+                            <td colspan="3" class="text-right"><strong>支付金額</strong></td>
+                            <td colspan="2">{{ total }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group"><strong>收件人</strong></div>
+            <div class="form-group">{{ order.name }}</div>
+            <div class="form-group"><strong>聯絡信箱</strong></div>
+            <div class="form-group">{{ order.email }}</div>
+            <div class="form-group"><strong>收件地址</strong></div>
+            <div class="form-group">{{ order.address }}</div>
+            <div class="form-group"><strong>訂單編號</strong></div>
+            <div class="form-group">{{ order.no }}</div>
+            <div class="form-group text-right mb-5">
+                <a href="index.html" class="kid-primary-btn">返回首頁</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container d-flex justify-content-between">
+                <div class="d-flex justify-content-center align-items-center flex-column w-100">
+                    <div class="footer-logo w-100">
+                        <img src="images/logo.svg" alt="" class="img-fluid" />
+                    </div>
+                    <div class="mt-5 social-icon">
+                        <a href="#"><img src="images/facebook.png" alt="" class="img-fluid" /></a>
+                        <a href="#"><img src="images/twitter.png" alt="" class="img-fluid" /></a>
+                        <a href="#"><img src="images/ig.png" alt="" class="img-fluid" /></a>
+                        <a href="#"><img src="images/amazon.png" alt="" class="img-fluid" /></a>
+                    </div>
+                </div>
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">聯絡我們</div>
+                            <div class="mb-3">聯絡我們</div>
+                            <div class="mb-3">聯絡我們</div>
+                            <div class="mb-3">聯絡我們</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">聯絡我們</div>
+                            <div class="mb-3">聯絡我們</div>
+                            <div class="mb-3">聯絡我們</div>
+                            <div class="mb-3">聯絡我們</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100">
+                    <h4 class="mb-4">訂閱電子報</h4>
+                    <div class="input-icon input-group">
+                        <input type="text" placeholder="EMAIL ADDRESS" />
+                        <a href="#" class="icon"><img src="images/sneder.png" class="img-fluid" alt="" /></a>
+                    </div>
+                    <div class="text-right mt-3">
+                        <a href="#">&copy; 2020 KID KING</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/header.js"></script>
+    <script src="js/complete.js"></script>
+</html>

@@ -1,0 +1,8 @@
+[
+    { "id": 1, "type": "GAP", "name": "提花條紋睡衣裙", "price": 800 },
+    { "id": 2, "type": "NET", "name": "保暖長褲", "price": 400 },
+    { "id": 3, "type": "NET", "name": "保暖上衣", "price": 500 },
+    { "id": 4, "type": "GAP", "name": "小背心", "price": 1000 },
+    { "id": 5, "type": "GAP", "name": "童鞋", "price": 300 },
+    { "id": 6, "type": "NET", "name": "毛帽", "price": 900 }
+]

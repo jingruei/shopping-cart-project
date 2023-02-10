@@ -1,0 +1,12 @@
+[
+    {
+        "account": "hello@gmail.com",
+        "password": "12345678",
+        "name": "JingRuei"
+    },
+    {
+        "account": "world@gmail.com",
+        "password": "12345678",
+        "name": "王大海"
+    }
+]
